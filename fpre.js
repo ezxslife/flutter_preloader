@@ -16,7 +16,7 @@ overlay.style.cssText = `
 
 const svgImage = document.createElement('img');
 svgImage.id = 'svgImage';
-svgImage.src = 'https://cdn.jsdelivr.net/gh/jasminder/flutter_preloader/preload.svg';
+svgImage.src = 'https://cdn.jsdelivr.net/gh/jasminder/flutter_preloader/flogo.png';
 svgImage.style.cssText = `
     max-width: 100%;
     max-height: 100%;
@@ -31,6 +31,9 @@ svgImage.style.display = 'none';
 // Append the elements to the body
 document.body.appendChild(overlay);
 document.body.appendChild(svgImage);
+
+// Change the background color of the body to black
+document.body.style.backgroundColor = 'black';
 
 // Function to hide the overlay and display the SVG
 function hideOverlay() {
