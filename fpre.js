@@ -16,15 +16,17 @@ overlay.style.cssText = `
 
 const svgImage = document.createElement('img');
 svgImage.id = 'svgImage';
-svgImage.src = 'https://cdn.jsdelivr.net/gh/jasminder/flutter_preloader/flogo.png';
+svgImage.src = 'https://cdn.jsdelivr.net/gh/jasminder/flutter_preloader/preload.svg';
 svgImage.style.cssText = `
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 100px;
+    max-height: 100px;
     display: none;
     position: absolute;
     top: 50%;
     left: 50%;
+    height: 100px;
     transform: translate(-50%, -50%);
+    animation: float 2s ease-in-out infinite;
 `;
 svgImage.style.display = 'none';
 
@@ -51,3 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fallback: If all external resources are loaded and the DOMContentLoaded event doesn't fire,
 // we'll still hide the overlay when the window's load event is triggered.
 window.addEventListener('load', hideOverlay);
+
+// Add floating animation with CSS keyframes
+const styleElement = document.createElement('style');
+styleElement.innerHTML = `
+    @keyframes float {
+        0% {
+            transform: translate(-50%, -50%) translateY(0);
+        }
+        50% {
+            transform: translate(-50%, -50%) translateY(-20px);
+        }
+        100% {
+            transform: translate(-50%, -50%) translateY(0);
+        }
+    }
+`;
+document.head.appendChild(styleElement);
