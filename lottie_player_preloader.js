@@ -1,4 +1,5 @@
-// lottie_player_preloader.js (no <script> tags)
+// lottie_player_preloader.js
+
 // 1) Create an overlay
 const overlay = document.createElement('div');
 Object.assign(overlay.style, {
@@ -7,7 +8,7 @@ Object.assign(overlay.style, {
   left: 0,
   width: '100vw',
   height: '100vh',
-  backgroundColor: '#FFFFFF',
+  backgroundColor: '#FFFFFF', // or any color you want
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -17,7 +18,10 @@ document.body.appendChild(overlay);
 
 // 2) Add the <lottie-player> element
 const lottiePlayer = document.createElement('lottie-player');
-lottiePlayer.setAttribute('src', 'https://lottie.host/your_file_here.lottie');
+lottiePlayer.setAttribute(
+  'src',
+  'https://lottie.host/e09b5233-c154-4c99-808a-88569163d713/ncdmDUEj3L.lottie'
+);
 lottiePlayer.setAttribute('background', 'transparent');
 lottiePlayer.setAttribute('speed', '1');
 lottiePlayer.setAttribute('style', 'width: 200px; height: 200px;');
